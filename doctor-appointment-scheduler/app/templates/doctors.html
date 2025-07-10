@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Doctor Portal - Doctor Scheduler{% endblock %}
+
+{% block content %}
+<h1>Doctor Portal</h1>
+<p class="lead">Welcome to the doctor portal. Manage your schedule and patient appointments.</p>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5>Available Features</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">📅 View appointment schedule</li>
+                    <li class="list-group-item">✅ Approve/decline appointment requests</li>
+                    <li class="list-group-item">⏰ Set availability hours</li>
+                    <li class="list-group-item">👥 Manage patient information</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

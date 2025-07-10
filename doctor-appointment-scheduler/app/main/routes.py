@@ -1,18 +1,18 @@
-from app.main import bp 
+from flask import render_template
+from app.main import bp
 
 @bp.route('/')
 @bp.route('/index')
-
 def index():
-    return '<h1>Doctor Appointment Scheduler</h1><p> Welcome to your Flask app!</p>'
+    return render_template('index.html')
 
 @bp.route('/patients')
 def patients():
-    return '<h1>Patient Portal</h1><p> Patient Login coming soon... </p>'
+    return render_template('patients.html')
 
 @bp.route('/doctors')
 def doctors():
-    return '<h1>Doctor Portal</h1><p>Doctor login coming soon...</p>'
+    return render_template('doctors.html')
 
 @bp.route('/test')
 def test():
