@@ -1,0 +1,261 @@
+{% extends "base.html" %}
+
+{% block title %}Breast Cancer Screening - Women's Health Center{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-5 fw-bold mb-3">Breast Cancer Screening</h1>
+                <p class="lead mb-4">Early Detection Saves Lives</p>
+                <p class="mb-4">Mammograms can detect breast cancer up to 2 years before you or your doctor can feel a lump. Early detection dramatically improves treatment outcomes and survival rates.</p>
+                <a href="{{ url_for('main.patients') }}" class="btn btn-appointment btn-lg text-white me-3">
+                    <i class="fas fa-calendar-plus"></i> Schedule Screening
+                </a>
+                <a href="#learn-more" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-info-circle"></i> Learn More
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <!-- image -->
+                <img src="{{ url_for('static', filename='images/healthcare-professional.jpg') }}" 
+                    alt="Healthcare professional" class="img-fluid rounded-3 shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Stats Section -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-primary-custom fw-bold">1 in 8</h3>
+                    <p class="mb-0">Women will develop breast cancer</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-success fw-bold">99%</h3>
+                    <p class="mb-0">5-year survival rate when caught early</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-info fw-bold">40+</h3>
+                    <p class="mb-0">Recommended age to start screening</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-warning fw-bold">Annual</h3>
+                    <p class="mb-0">Screening frequency recommended</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-5" id="learn-more">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Screening Types -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">Types of Breast Cancer Screening</h2>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-x-ray fa-4x text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary-custom">Digital Mammography</h4>
+                                    <p>Advanced digital X-ray examination of the breast that can detect tumors before they can be felt during a clinical exam.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i> Takes 10-15 minutes</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Minimal discomfort</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> High-resolution images</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-hand-paper fa-4x text-success"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary-custom">Clinical Breast Exam</h4>
+                                    <p>Physical examination performed by a healthcare professional to check for lumps or other changes in breast tissue.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i> Part of routine checkup</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Non-invasive examination</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Complements mammography</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-wave-square fa-4x text-info"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary-custom">Breast Ultrasound</h4>
+                                    <p>Uses sound waves to create images of breast tissue. Often used as a follow-up to mammography for further evaluation.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i> No radiation exposure</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Painless procedure</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Excellent for dense breast tissue</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screening Guidelines -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">Screening Guidelines</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-success">
+                                <div class="card-header bg-success text-white">
+                                    <h5 class="mb-0"><i class="fas fa-calendar-check me-2"></i>Age 40-49</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Annual mammograms recommended</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Discuss benefits and risks with doctor</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Consider family history</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 border-primary">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0"><i class="fas fa-calendar-check me-2"></i>Age 50-74</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-dot-circle text-primary me-2"></i> Annual mammograms strongly recommended</li>
+                                        <li><i class="fas fa-dot-circle text-primary me-2"></i> Highest benefit period</li>
+                                        <li><i class="fas fa-dot-circle text-primary me-2"></i> Continue regular screening</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What to Expect -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">What to Expect During Your Visit</h2>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-2 text-center">
+                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <span class="fw-bold">1</span>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <h5>Before Your Appointment</h5>
+                            <p>Schedule for the week after your period when breasts are less tender. Avoid deodorant, perfume, or powder on your chest area.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-2 text-center">
+                            <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <span class="fw-bold">2</span>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <h5>During the Exam</h5>
+                            <p>You'll undress from the waist up and put on a hospital gown. A technologist will position you for the X-ray images.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-2 text-center">
+                            <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <span class="fw-bold">3</span>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <h5>After Your Screening</h5>
+                            <p>Results are typically available within 1-2 weeks. You'll receive a detailed report, and we'll contact you if any follow-up is needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 20px;">
+                    <!-- Schedule Appointment Card -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="fas fa-calendar-plus me-2"></i>Schedule Your Screening</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <p>Early detection saves lives. Don't wait to schedule your mammogram.</p>
+                            <a href="{{ url_for('main.patients') }}" class="btn btn-appointment btn-lg w-100 text-white mb-3">
+                                Book Now
+                            </a>
+                            <small class="text-muted">Most insurance plans cover annual screenings at 100%</small>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h6 class="mb-0">Questions? Contact Us</h6>
+                        </div>
+                        <div class="card-body">
+                            <p><i class="fas fa-phone text-primary me-2"></i> (555) 123-4567</p>
+                            <p><i class="fas fa-envelope text-primary me-2"></i> screening@womenshealth.com</p>
+                            <p class="mb-0"><i class="fas fa-clock text-primary me-2"></i> Mon-Fri: 8am-6pm</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Facts -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0">Quick Facts</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="small">
+                                <p><strong>Procedure time:</strong> 10-15 minutes</p>
+                                <p><strong>Preparation:</strong> Minimal</p>
+                                <p><strong>Results:</strong> 1-2 weeks</p>
+                                <p><strong>Frequency:</strong> Annual</p>
+                                <p class="mb-0"><strong>Insurance:</strong> Usually covered 100%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

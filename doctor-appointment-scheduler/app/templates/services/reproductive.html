@@ -1,0 +1,369 @@
+{% extends "base.html" %}
+
+{% block title %}Reproductive Health - Women's Health Center{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-5 fw-bold mb-3">Reproductive Health</h1>
+                <p class="lead mb-4">Comprehensive Women's Care for Every Stage of Life</p>
+                <p class="mb-4">From adolescence through menopause and beyond, we provide complete reproductive health services including family planning, pregnancy care, fertility support, and gynecological health.</p>
+                <a href="{{ url_for('main.patients') }}" class="btn btn-appointment btn-lg text-white me-3">
+                    <i class="fas fa-calendar-plus"></i> Schedule Consultation
+                </a>
+                <a href="#learn-more" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-info-circle"></i> Our Services
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <!-- You can add another medical image here -->
+                <img src="{{ url_for('static', filename='images/healthcare-professional.jpg') }}" 
+                     alt="Reproductive health care" class="img-fluid rounded-3 shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Overview -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <div class="p-3">
+                    <i class="fas fa-baby fa-3x text-primary-custom mb-2"></i>
+                    <h5>Family Planning</h5>
+                    <p class="mb-0">Contraception & fertility guidance</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <i class="fas fa-heart fa-3x text-success mb-2"></i>
+                    <h5>Pregnancy Care</h5>
+                    <p class="mb-0">Prenatal through postpartum support</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <i class="fas fa-female fa-3x text-info mb-2"></i>
+                    <h5>Gynecological Health</h5>
+                    <p class="mb-0">Routine exams & treatments</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <i class="fas fa-leaf fa-3x text-warning mb-2"></i>
+                    <h5>Menopause Care</h5>
+                    <p class="mb-0">Hormone therapy & support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-5" id="learn-more">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Family Planning -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">Family Planning Services</h2>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-pills fa-4x text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary-custom">Contraception Options</h4>
+                                    <p>Comprehensive contraceptive counseling and services to help you choose the method that's right for your lifestyle and health needs.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i> Birth control pills, patches, rings</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> IUDs and implants</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Barrier methods and emergency contraception</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-seedling fa-4x text-success"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary-custom">Fertility Support</h4>
+                                    <p>Expert guidance for couples trying to conceive, including fertility assessments and treatment options.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i> Preconception counseling</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Fertility testing and evaluation</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Treatment planning and referrals</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregnancy Care -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">Pregnancy & Prenatal Care</h2>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-heartbeat fa-4x text-danger"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary-custom">Prenatal Care</h4>
+                                    <p>Comprehensive pregnancy care to ensure the health of both mother and baby throughout pregnancy.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i> Regular prenatal checkups</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Ultrasounds and genetic screening</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Nutrition and lifestyle counseling</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-hand-holding-heart fa-4x text-info"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary-custom">Postpartum Support</h4>
+                                    <p>Continued care after delivery to support your recovery and adjustment to motherhood.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i> Postpartum checkups</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Breastfeeding support</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Mental health screening</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gynecological Health -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">Gynecological Health Services</h2>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="text-primary-custom"><i class="fas fa-calendar-check me-2"></i>Annual Exams</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Pelvic exams</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Breast exams</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Sexual health screening</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Preventive care counseling</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="text-primary-custom"><i class="fas fa-stethoscope me-2"></i>Condition Treatment</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-dot-circle text-info me-2"></i> Irregular periods</li>
+                                        <li><i class="fas fa-dot-circle text-info me-2"></i> PCOS management</li>
+                                        <li><i class="fas fa-dot-circle text-info me-2"></i> Endometriosis care</li>
+                                        <li><i class="fas fa-dot-circle text-info me-2"></i> Pelvic pain treatment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menopause Care -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">Menopause & Hormonal Health</h2>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-thermometer-half fa-4x text-warning"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary-custom">Menopause Management</h4>
+                                    <p>Comprehensive care to help you navigate menopause with comfort and confidence.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i> Hormone replacement therapy</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Alternative treatments</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Bone health monitoring</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- When to Schedule -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">When to Schedule an Appointment</h2>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card border-success h-100">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0 text-success"><i class="fas fa-calendar me-2"></i>Routine Care</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Annual wellness exams</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Contraception consultation</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Preconception planning</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Menopause discussions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-warning h-100">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0 text-warning"><i class="fas fa-exclamation-triangle me-2"></i>Symptoms to Address</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-dot-circle text-warning me-2"></i> Irregular or heavy periods</li>
+                                        <li><i class="fas fa-dot-circle text-warning me-2"></i> Pelvic pain or discomfort</li>
+                                        <li><i class="fas fa-dot-circle text-warning me-2"></i> Unusual discharge or bleeding</li>
+                                        <li><i class="fas fa-dot-circle text-warning me-2"></i> Difficulty conceiving</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Age-Based Guidelines -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">Care Throughout Your Life</h2>
+                    
+                    <div class="timeline">
+                        <div class="row mb-4">
+                            <div class="col-md-2 text-center">
+                                <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <span class="fw-bold">Teens</span>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <h5>Adolescent Care (13-19)</h5>
+                                <p>First gynecological visit, menstrual health, sexual education, and HPV vaccination.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-2 text-center">
+                                <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <span class="fw-bold">20s-30s</span>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <h5>Reproductive Years (20-39)</h5>
+                                <p>Family planning, contraception, fertility support, pregnancy care, and routine screenings.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-2 text-center">
+                                <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <span class="fw-bold">40s-50s</span>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <h5>Perimenopause (40-55)</h5>
+                                <p>Hormone changes, irregular periods, early menopause symptoms, and increased screening.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-2 text-center">
+                                <div class="bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                    <span class="fw-bold">55+</span>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <h5>Post-Menopause (55+)</h5>
+                                <p>Hormone replacement therapy, bone health, cardiovascular care, and ongoing wellness.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 20px;">
+                    <!-- Schedule Consultation Card -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="fas fa-calendar-plus me-2"></i>Schedule Consultation</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <p>Personalized reproductive health care for every stage of your life.</p>
+                            <a href="{{ url_for('main.patients') }}" class="btn btn-appointment btn-lg w-100 text-white mb-3">
+                                Book Now
+                            </a>
+                            <small class="text-muted">We accept most insurance plans</small>
+                        </div>
+                    </div>
+
+                    <!-- Services Summary -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h6 class="mb-0">Our Services Include</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="small">
+                                <p><i class="fas fa-check text-success me-2"></i> Annual wellness exams</p>
+                                <p><i class="fas fa-check text-success me-2"></i> Family planning counseling</p>
+                                <p><i class="fas fa-check text-success me-2"></i> Pregnancy care</p>
+                                <p><i class="fas fa-check text-success me-2"></i> Fertility support</p>
+                                <p><i class="fas fa-check text-success me-2"></i> Menopause management</p>
+                                <p class="mb-0"><i class="fas fa-check text-success me-2"></i> Treatment of gynecological conditions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0">Questions? Contact Us</h6>
+                        </div>
+                        <div class="card-body">
+                            <p><i class="fas fa-phone text-primary me-2"></i> (555) 123-4567</p>
+                            <p><i class="fas fa-envelope text-primary me-2"></i> reproductive@womenshealth.com</p>
+                            <p class="mb-0"><i class="fas fa-clock text-primary me-2"></i> Mon-Fri: 8am-6pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

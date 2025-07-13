@@ -1,0 +1,283 @@
+{% extends "base.html" %}
+
+{% block title %}HPV Vaccination - Women's Health Center{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-5 fw-bold mb-3">HPV Vaccination</h1>
+                <p class="lead mb-4">Protection Against HPV-Related Cancers</p>
+                <p class="mb-4">The HPV vaccine protects against human papillomavirus (HPV) infections that can cause cervical, vaginal, vulvar, and other cancers. It's most effective when given before exposure to HPV.</p>
+                <a href="{{ url_for('main.patients') }}" class="btn btn-appointment btn-lg text-white me-3">
+                    <i class="fas fa-syringe"></i> Schedule Vaccination
+                </a>
+                <a href="#learn-more" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-info-circle"></i> Learn More
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <!-- You can replace this with your own medical image -->
+                <img src="{{ url_for('static', filename='images/healthcare-professional.jpg') }}" 
+                     alt="HPV vaccination" class="img-fluid rounded-3 shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Stats Section -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-primary-custom fw-bold">90%</h3>
+                    <p class="mb-0">Prevention rate for cervical cancer</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-success fw-bold">9-14</h3>
+                    <p class="mb-0">Ideal age range for vaccination</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-info fw-bold">2-3</h3>
+                    <p class="mb-0">Doses required for full protection</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-warning fw-bold">6+ Months</h3>
+                    <p class="mb-0">Long-lasting immunity</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-5" id="learn-more">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- What is HPV -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">Understanding HPV</h2>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-virus fa-4x text-danger"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary-custom">What is HPV?</h4>
+                                    <p>Human papillomavirus (HPV) is a common sexually transmitted infection. Most sexually active people will get HPV at some point in their lives.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i> Over 200 types of HPV exist</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Some types cause cancer</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Often no symptoms present</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-shield-alt fa-4x text-success"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary-custom">HPV Vaccine Protection</h4>
+                                    <p>The HPV vaccine protects against the types of HPV that most commonly cause cancer and genital warts.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i> Prevents cervical cancer</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Protects against genital warts</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Reduces vaginal and vulvar cancers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vaccination Schedule -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">Vaccination Schedule</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-success">
+                                <div class="card-header bg-success text-white">
+                                    <h5 class="mb-0"><i class="fas fa-child me-2"></i>Ages 9-14</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="text-success">2-Dose Series</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> First dose: Any time</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Second dose: 6-12 months later</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Most effective at this age</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 border-primary">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0"><i class="fas fa-user me-2"></i>Ages 15-26</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="text-primary">3-Dose Series</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-dot-circle text-primary me-2"></i> First dose: Any time</li>
+                                        <li><i class="fas fa-dot-circle text-primary me-2"></i> Second dose: 1-2 months later</li>
+                                        <li><i class="fas fa-dot-circle text-primary me-2"></i> Third dose: 6 months after first</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-info mt-4">
+                        <h6><i class="fas fa-info-circle me-2"></i>Ages 27-45</h6>
+                        <p class="mb-0">Talk to your doctor about whether HPV vaccination is right for you. Some adults who are not already protected might decide to get vaccinated after speaking with their doctor.</p>
+                    </div>
+                </div>
+
+                <!-- What to Expect -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">What to Expect</h2>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-2 text-center">
+                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <span class="fw-bold">1</span>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <h5>Before Vaccination</h5>
+                            <p>Brief consultation to review medical history and discuss any questions. No special preparation needed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-2 text-center">
+                            <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <span class="fw-bold">2</span>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <h5>During Vaccination</h5>
+                            <p>Quick injection in the upper arm. Takes less than a minute. Most people experience only mild discomfort.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-2 text-center">
+                            <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <span class="fw-bold">3</span>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <h5>After Vaccination</h5>
+                            <p>15-minute observation period. You'll receive a vaccination record card. Schedule your next dose if needed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side Effects -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">Side Effects</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card border-success">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0 text-success"><i class="fas fa-check-circle me-2"></i>Common (Mild)</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Arm soreness</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Redness at injection site</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Mild swelling</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Low-grade fever</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-warning">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0 text-warning"><i class="fas fa-exclamation-triangle me-2"></i>When to Call</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-dot-circle text-warning me-2"></i> High fever (>101°F)</li>
+                                        <li><i class="fas fa-dot-circle text-warning me-2"></i> Severe allergic reaction</li>
+                                        <li><i class="fas fa-dot-circle text-warning me-2"></i> Persistent pain</li>
+                                        <li><i class="fas fa-dot-circle text-warning me-2"></i> Any concerns</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 20px;">
+                    <!-- Schedule Vaccination Card -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="fas fa-syringe me-2"></i>Schedule Vaccination</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <p>Protect yourself against HPV-related cancers. The vaccine is most effective before exposure.</p>
+                            <a href="{{ url_for('main.patients') }}" class="btn btn-appointment btn-lg w-100 text-white mb-3">
+                                Book Now
+                            </a>
+                            <small class="text-muted">Most insurance plans cover HPV vaccination</small>
+                        </div>
+                    </div>
+
+                    <!-- Age Recommendations -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h6 class="mb-0">Age Recommendations</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="small">
+                                <p><strong>Ages 9-14:</strong> 2 doses</p>
+                                <p><strong>Ages 15-26:</strong> 3 doses</p>
+                                <p><strong>Ages 27-45:</strong> Consult doctor</p>
+                                <p class="mb-0"><strong>Best protection:</strong> Before exposure to HPV</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0">Questions? Contact Us</h6>
+                        </div>
+                        <div class="card-body">
+                            <p><i class="fas fa-phone text-primary me-2"></i> (555) 123-4567</p>
+                            <p><i class="fas fa-envelope text-primary me-2"></i> vaccines@womenshealth.com</p>
+                            <p class="mb-0"><i class="fas fa-clock text-primary me-2"></i> Mon-Fri: 8am-6pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

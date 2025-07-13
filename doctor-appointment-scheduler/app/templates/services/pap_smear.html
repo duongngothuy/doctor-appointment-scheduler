@@ -1,0 +1,318 @@
+{% extends "base.html" %}
+
+{% block title %}Pap Smear Testing - Women's Health Center{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-5 fw-bold mb-3">Pap Smear Testing</h1>
+                <p class="lead mb-4">Cervical Cancer Screening That Saves Lives</p>
+                <p class="mb-4">A Pap smear is a simple, quick test that can detect abnormal cells in the cervix before they become cancerous. Regular screening has reduced cervical cancer deaths by more than 50%.</p>
+                <a href="{{ url_for('main.patients') }}" class="btn btn-appointment btn-lg text-white me-3">
+                    <i class="fas fa-calendar-check"></i> Schedule Test
+                </a>
+                <a href="#learn-more" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-info-circle"></i> Learn More
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <!-- You can add another medical image here -->
+                <img src="{{ url_for('static', filename='images/healthcare-professional.jpg') }}" 
+                     alt="Pap smear testing" class="img-fluid rounded-3 shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Stats Section -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-primary-custom fw-bold">93%</h3>
+                    <p class="mb-0">Cervical cancer prevention rate</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-success fw-bold">21</h3>
+                    <p class="mb-0">Age to start screening</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-info fw-bold">3 Years</h3>
+                    <p class="mb-0">Screening frequency (ages 21-29)</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-warning fw-bold">5 Minutes</h3>
+                    <p class="mb-0">Quick procedure time</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-5" id="learn-more">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- What is a Pap Smear -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">Understanding Pap Smear Testing</h2>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-microscope fa-4x text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary-custom">What is a Pap Smear?</h4>
+                                    <p>A Pap smear (or Pap test) collects cells from your cervix to check for abnormal changes that could develop into cervical cancer.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i> Simple, quick procedure</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Detects abnormal cells early</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Can prevent cervical cancer</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <i class="fas fa-dna fa-4x text-success"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary-custom">HPV Testing</h4>
+                                    <p>Often done alongside Pap smears, HPV testing checks for the virus that causes most cervical cancers.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i> Same sample, additional information</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Identifies high-risk HPV types</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Helps determine follow-up care</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screening Schedule -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">Screening Guidelines</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-success">
+                                <div class="card-header bg-success text-white">
+                                    <h5 class="mb-0"><i class="fas fa-calendar me-2"></i>Ages 21-29</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="text-success">Pap Smear Every 3 Years</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Start at age 21</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Pap test only (no HPV test)</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Continue every 3 years</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 border-primary">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0"><i class="fas fa-calendar-check me-2"></i>Ages 30-65</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="text-primary">Multiple Options</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-dot-circle text-primary me-2"></i> Pap + HPV test every 5 years</li>
+                                        <li><i class="fas fa-dot-circle text-primary me-2"></i> OR Pap test every 3 years</li>
+                                        <li><i class="fas fa-dot-circle text-primary me-2"></i> OR HPV test every 5 years</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-info mt-4">
+                        <h6><i class="fas fa-info-circle me-2"></i>Ages 65+</h6>
+                        <p class="mb-0">You may stop screening if you've had regular normal results and no history of serious cervical abnormalities. Discuss with your doctor.</p>
+                    </div>
+                </div>
+
+                <!-- What to Expect -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">What to Expect During Your Test</h2>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-2 text-center">
+                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <span class="fw-bold">1</span>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <h5>Before Your Appointment</h5>
+                            <p>Schedule for a time when you're not menstruating. Avoid douching, vaginal medications, or intercourse 24 hours before.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-2 text-center">
+                            <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <span class="fw-bold">2</span>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <h5>During the Exam</h5>
+                            <p>You'll lie on an exam table. A speculum is inserted to view the cervix, and cells are gently collected with a brush. Takes about 5 minutes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-2 text-center">
+                            <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <span class="fw-bold">3</span>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <h5>After the Test</h5>
+                            <p>You can resume normal activities immediately. Results typically available in 1-2 weeks. We'll contact you with results and any follow-up needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Understanding Results -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">Understanding Your Results</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card border-success">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0 text-success"><i class="fas fa-check-circle me-2"></i>Normal Results</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> No abnormal cells found</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Continue regular screening schedule</li>
+                                        <li><i class="fas fa-dot-circle text-success me-2"></i> Next test in 3-5 years</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-warning">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0 text-warning"><i class="fas fa-exclamation-triangle me-2"></i>Abnormal Results</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-dot-circle text-warning me-2"></i> Doesn't mean cancer</li>
+                                        <li><i class="fas fa-dot-circle text-warning me-2"></i> May need follow-up testing</li>
+                                        <li><i class="fas fa-dot-circle text-warning me-2"></i> Could indicate infection or minor changes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preparation Tips -->
+                <div class="mb-5">
+                    <h2 class="fw-bold text-primary-custom mb-4">How to Prepare</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card border-success">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0 text-success"><i class="fas fa-thumbs-up me-2"></i>Do</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-check text-success me-2"></i> Schedule when not menstruating</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Empty your bladder before the exam</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Wear comfortable clothing</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> Bring questions to ask</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-danger">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0 text-danger"><i class="fas fa-times me-2"></i>Avoid 24 Hours Before</h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-times text-danger me-2"></i> Douching</li>
+                                        <li><i class="fas fa-times text-danger me-2"></i> Vaginal medications</li>
+                                        <li><i class="fas fa-times text-danger me-2"></i> Sexual intercourse</li>
+                                        <li><i class="fas fa-times text-danger me-2"></i> Spermicidal products</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 20px;">
+                    <!-- Schedule Test Card -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="fas fa-calendar-check me-2"></i>Schedule Your Test</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <p>Regular Pap smears save lives through early detection of cervical abnormalities.</p>
+                            <a href="{{ url_for('main.patients') }}" class="btn btn-appointment btn-lg w-100 text-white mb-3">
+                                Book Now
+                            </a>
+                            <small class="text-muted">Most insurance plans cover screening at 100%</small>
+                        </div>
+                    </div>
+
+                    <!-- Age Guidelines -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h6 class="mb-0">Screening Schedule</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="small">
+                                <p><strong>Ages 21-29:</strong> Every 3 years</p>
+                                <p><strong>Ages 30-65:</strong> Every 3-5 years</p>
+                                <p><strong>Ages 65+:</strong> May stop if regular normal results</p>
+                                <p class="mb-0"><strong>Results:</strong> Available in 1-2 weeks</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0">Questions? Contact Us</h6>
+                        </div>
+                        <div class="card-body">
+                            <p><i class="fas fa-phone text-primary me-2"></i> (555) 123-4567</p>
+                            <p><i class="fas fa-envelope text-primary me-2"></i> screening@womenshealth.com</p>
+                            <p class="mb-0"><i class="fas fa-clock text-primary me-2"></i> Mon-Fri: 8am-6pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

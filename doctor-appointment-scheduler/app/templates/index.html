@@ -1,33 +1,184 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-12">
-        <div class="jumbotron bg-light p-5 rounded">
-            <h1 class="display-4">Welcome to Doctor Appointment Scheduler</h1>
-            <p class="lead">Easy online appointment booking for patients and doctors.</p>
-            <hr class="my-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">For Patients</h5>
-                            <p class="card-text">Book appointments with your preferred doctors.</p>
-                            <a href="{{ url_for('main.patients') }}" class="btn btn-primary">Patient Portal</a>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-3">Women's Health</h1>
+                <h1 class="display-4 fw-bold mb-4">Care You Deserve</h1>
+                <p class="lead mb-4">COMPREHENSIVE WOMEN'S HEALTHCARE FROM ADOLESCENCE THROUGH MENOPAUSE AND BEYOND</p>
+                <a href="{{ url_for('main.patients') }}" class="btn btn-appointment btn-lg text-white">
+                    <i class="fas fa-calendar-check"></i> Book Your Appointment
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                     alt="Women's health consultation" class="img-fluid rounded-3 shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-primary-custom">Our Women's Health Services</h2>
+            <p class="lead">Specialized care for every stage of your life</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card feature-card h-100 text-center p-4">
+                    <div class="card-body">
+                        <div class="text-primary mb-3">
+                            <i class="fas fa-shield-virus fa-3x"></i>
+                        </div>
+                        <h5 class="card-title text-primary-custom">HPV Vaccination</h5>
+                        <p class="card-text">Protect against HPV-related cancers with our comprehensive vaccination program.</p>
+                        <a href="{{ url_for('main.services', service='hpv') }}" class="btn btn-outline-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card feature-card h-100 text-center p-4">
+                    <div class="card-body">
+                        <div class="text-danger mb-3">
+                            <i class="fas fa-microscope fa-3x"></i>
+                        </div>
+                        <h5 class="card-title text-primary-custom">Pap Smear Testing</h5>
+                        <p class="card-text">Regular cervical cancer screening to detect abnormal cells early.</p>
+                        <a href="{{ url_for('main.services', service='pap-smear') }}" class="btn btn-outline-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card feature-card h-100 text-center p-4">
+                    <div class="card-body">
+                        <div class="text-success mb-3">
+                            <i class="fas fa-ribbon fa-3x"></i>
+                        </div>
+                        <h5 class="card-title text-primary-custom">Breast Cancer Screening</h5>
+                        <p class="card-text">Mammograms and clinical breast exams for early detection and prevention.</p>
+                        <a href="{{ url_for('main.services', service='breast-cancer') }}" class="btn btn-outline-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card feature-card h-100 text-center p-4">
+                    <div class="card-body">
+                        <div class="text-info mb-3">
+                            <i class="fas fa-baby fa-3x"></i>
+                        </div>
+                        <h5 class="card-title text-primary-custom">Reproductive Health</h5>
+                        <p class="card-text">Family planning, pregnancy care, and reproductive wellness services.</p>
+                        <a href="{{ url_for('main.services', service='reproductive') }}" class="btn btn-outline-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Specialists Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-primary-custom">Our Women's Health Specialists</h2>
+            <p class="lead">Expert care from board-certified specialists</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <img src="https://images.unsplash.com/photo-1594824475520-8bb5b10b8b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         class="card-img-top" alt="Dr. Sarah Martinez" style="height: 300px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Dr. Sarah Martinez</h5>
+                        <p class="text-muted">Gynecologist & Women's Health Specialist</p>
+                        <p class="card-text">15+ years specializing in women's reproductive health and preventive care.</p>
+                        <div class="mb-2">
+                            <span class="badge bg-primary me-1">Pap Smears</span>
+                            <span class="badge bg-primary me-1">HPV Vaccination</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">For Doctors</h5>
-                            <p class="card-text">Manage your schedule and appointments.</p>
-                            <a href="{{ url_for('main.doctors') }}" class="btn btn-success">Doctor Portal</a>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         class="card-img-top" alt="Dr. Lisa Chen" style="height: 300px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Dr. Lisa Chen</h5>
+                        <p class="text-muted">Breast Cancer Specialist</p>
+                        <p class="card-text">Leading expert in breast cancer screening, diagnosis, and treatment.</p>
+                        <div class="mb-2">
+                            <span class="badge bg-success me-1">Mammography</span>
+                            <span class="badge bg-success me-1">Breast Biopsy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         class="card-img-top" alt="Dr. Amanda Rodriguez" style="height: 300px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Dr. Amanda Rodriguez</h5>
+                        <p class="text-muted">Maternal-Fetal Medicine</p>
+                        <p class="card-text">Specialized care for high-risk pregnancies and prenatal diagnostics.</p>
+                        <div class="mb-2">
+                            <span class="badge bg-info me-1">Pregnancy Care</span>
+                            <span class="badge bg-info me-1">Prenatal Testing</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="fw-bold text-primary-custom mb-4">Why Choose Women's Health Center?</h2>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success fa-2x me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Comprehensive Screening Programs</h6>
+                                <p class="text-muted mb-0">Regular screenings save lives through early detection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success fa-2x me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Latest Technology & Equipment</h6>
+                                <p class="text-muted mb-0">State-of-the-art mammography and diagnostic tools</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success fa-2x me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Compassionate Care</h6>
+                                <p class="text-muted mb-0">Understanding and supportive environment for all patients</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                     alt="Medical consultation" class="img-fluid rounded-3">
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
