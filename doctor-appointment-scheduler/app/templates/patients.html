@@ -1,26 +1,329 @@
 {% extends "base.html" %}
 
-{% block title %}Patient Portal - Doctor Scheduler{% endblock %}
+{% block title %}Patient Portal - Women's Health Center{% endblock %}
 
 {% block content %}
-<h1>Patient Portal</h1>
-<p class="lead">Welcome to the patient portal. Book and manage your appointments here.</p>
-
-<div class="row">
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">
-                <h5>Available Features</h5>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-5 fw-bold mb-3">Patient Portal</h1>
+                <p class="lead mb-4">Book Your Appointment Online</p>
+                <p class="mb-4">Schedule your women's health appointment quickly and easily. Choose from our comprehensive range of services and find a time that works for you.</p>
+                <a href="#book-appointment" class="btn btn-appointment btn-lg text-white">
+                    <i class="fas fa-calendar-plus"></i> Book Now
+                </a>
             </div>
-            <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">📅 Book new appointments</li>
-                    <li class="list-group-item">👩‍⚕️ Browse available doctors</li>
-                    <li class="list-group-item">📋 View appointment history</li>
-                    <li class="list-group-item">✏️ Update personal information</li>
-                </ul>
+            <div class="col-lg-4">
+                <img src="{{ url_for('static', filename='images/healthcare-professional.jpg') }}" 
+                     alt="Patient portal" class="img-fluid rounded-3 shadow-lg">
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<!-- Booking Section -->
+<section class="py-5" id="book-appointment">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0"><i class="fas fa-calendar-check me-2"></i>Schedule Your Appointment</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="appointmentForm">
+                            <!-- Service Selection -->
+                            <div class="mb-4">
+                                <label for="serviceType" class="form-label fw-bold">
+                                    <i class="fas fa-stethoscope me-2 text-primary"></i>Select Service *
+                                </label>
+                                <select class="form-select form-select-lg" id="serviceType" name="serviceType" required>
+                                    <option value="">Choose a service...</option>
+                                    <option value="consultation">General Consultation</option>
+                                    <option value="breast-cancer-screening">Breast Cancer Screening</option>
+                                    <option value="hpv-vaccination">HPV Vaccination</option>
+                                    <option value="pap-smear">Pap Smear Testing</option>
+                                    <option value="reproductive-health">Reproductive Health Consultation</option>
+                                    <option value="annual-exam">Annual Wellness Exam</option>
+                                    <option value="family-planning">Family Planning Consultation</option>
+                                </select>
+                            </div>
+
+                            <!-- Doctor Selection -->
+                            <div class="mb-4">
+                                <label for="doctorSelect" class="form-label fw-bold">
+                                    <i class="fas fa-user-md me-2 text-primary"></i>Preferred Doctor
+                                </label>
+                                <select class="form-select form-select-lg" id="doctorSelect" name="doctorSelect">
+                                    <option value="">No preference</option>
+                                    <option value="dr-martinez">Dr. Sarah Martinez - Gynecologist</option>
+                                    <option value="dr-chen">Dr. Lisa Chen - Breast Cancer Specialist</option>
+                                    <option value="dr-rodriguez">Dr. Amanda Rodriguez - Maternal-Fetal Medicine</option>
+                                </select>
+                            </div>
+
+                            <!-- Date and Time -->
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label for="appointmentDate" class="form-label fw-bold">
+                                        <i class="fas fa-calendar me-2 text-primary"></i>Preferred Date *
+                                    </label>
+                                    <input type="date" class="form-control form-control-lg" id="appointmentDate" name="appointmentDate" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="appointmentTime" class="form-label fw-bold">
+                                        <i class="fas fa-clock me-2 text-primary"></i>Preferred Time *
+                                    </label>
+                                    <select class="form-select form-select-lg" id="appointmentTime" name="appointmentTime" required>
+                                        <option value="">Select time...</option>
+                                        <option value="08:00">8:00 AM</option>
+                                        <option value="08:30">8:30 AM</option>
+                                        <option value="09:00">9:00 AM</option>
+                                        <option value="09:30">9:30 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="10:30">10:30 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="11:30">11:30 AM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="13:30">1:30 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="14:30">2:30 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="15:30">3:30 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="16:30">4:30 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Patient Information -->
+                            <h5 class="text-primary-custom mb-3"><i class="fas fa-user me-2"></i>Personal Information</h5>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="dateOfBirth" class="form-label">Date of Birth *</label>
+                                    <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="insuranceProvider" class="form-label">Insurance Provider</label>
+                                    <select class="form-select" id="insuranceProvider" name="insuranceProvider">
+                                        <option value="">Select insurance...</option>
+                                        <option value="aetna">Aetna</option>
+                                        <option value="blue-cross">Blue Cross Blue Shield</option>
+                                        <option value="cigna">Cigna</option>
+                                        <option value="humana">Humana</option>
+                                        <option value="kaiser">Kaiser Permanente</option>
+                                        <option value="united">United Healthcare</option>
+                                        <option value="other">Other</option>
+                                        <option value="self-pay">Self-Pay</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Reason for Visit -->
+                            <div class="mb-4">
+                                <label for="visitReason" class="form-label fw-bold">
+                                    <i class="fas fa-clipboard me-2 text-primary"></i>Reason for Visit
+                                </label>
+                                <textarea class="form-control" id="visitReason" name="visitReason" rows="3" 
+                                    placeholder="Please describe the reason for your visit, any symptoms, or specific concerns..."></textarea>
+                            </div>
+
+                            <!-- Medical History -->
+                            <h5 class="text-primary-custom mb-3"><i class="fas fa-file-medical me-2"></i>Medical History</h5>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Do you have any of the following? (Check all that apply)</label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="diabetes" name="diabetes">
+                                            <label class="form-check-label" for="diabetes">Diabetes</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="highBP" name="highBP">
+                                            <label class="form-check-label" for="highBP">High Blood Pressure</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="heartDisease" name="heartDisease">
+                                            <label class="form-check-label" for="heartDisease">Heart Disease</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="familyCancerHistory" name="familyCancerHistory">
+                                            <label class="form-check-label" for="familyCancerHistory">Family History of Cancer</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="pregnancyHistory" name="pregnancyHistory">
+                                            <label class="form-check-label" for="pregnancyHistory">Previous Pregnancies</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="noMedicalHistory" name="noMedicalHistory">
+                                            <label class="form-check-label" for="noMedicalHistory">None of the above</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="currentMedications" class="form-label">Current Medications</label>
+                                <textarea class="form-control" id="currentMedications" name="currentMedications" rows="2" 
+                                    placeholder="List any medications you're currently taking..."></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-appointment btn-lg text-white">
+                                    <i class="fas fa-calendar-check me-2"></i>Schedule Appointment
+                                </button>
+                            </div>
+
+                            <p class="text-muted text-center mt-3 small">
+                                <i class="fas fa-info-circle me-1"></i>
+                                You will receive a confirmation email within 24 hours. For urgent matters, please call (555) 123-4567.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Information -->
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 20px;">
+                    <!-- What to Expect -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-success text-white">
+                            <h6 class="mb-0"><i class="fas fa-info-circle me-2"></i>What to Expect</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="small">
+                                <p><strong>Confirmation:</strong> Within 24 hours</p>
+                                <p><strong>Preparation:</strong> Instructions will be emailed</p>
+                                <p><strong>Arrival:</strong> Please arrive 15 minutes early</p>
+                                <p class="mb-0"><strong>Bring:</strong> ID, insurance card, medication list</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h6 class="mb-0">Need Help Booking?</h6>
+                        </div>
+                        <div class="card-body">
+                            <p><i class="fas fa-phone text-primary me-2"></i> (555) 123-4567</p>
+                            <p><i class="fas fa-envelope text-primary me-2"></i> appointments@womenshealth.com</p>
+                            <p class="mb-0"><i class="fas fa-clock text-primary me-2"></i> Mon-Fri: 8am-6pm</p>
+                        </div>
+                    </div>
+
+                    <!-- Insurance Notice -->
+                    <div class="card">
+                        <div class="card-header bg-info text-white">
+                            <h6 class="mb-0"><i class="fas fa-shield-alt me-2"></i>Insurance</h6>
+                        </div>
+                        <div class="card-body">
+                            <p class="small mb-0">We accept most major insurance plans. Preventive care visits are typically covered at 100%. Please verify your benefits before your visit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for form functionality -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Set minimum date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('appointmentDate').setAttribute('min', today);
+    
+    // Handle form submission
+    document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show loading state
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalText = submitButton.innerHTML;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Booking Appointment...';
+        submitButton.disabled = true;
+        
+        // Create FormData object
+        const formData = new FormData(this);
+        
+        // Submit to backend
+        fetch('/patients', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Show success message
+                alert('Success! ' + data.message);
+                // Reset form
+                this.reset();
+            } else {
+                // Show error message
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while booking your appointment. Please try again.');
+        })
+        .finally(() => {
+            // Reset button
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+        });
+    });
+    
+    // Handle "None of the above" checkbox
+    document.getElementById('noMedicalHistory').addEventListener('change', function() {
+        if (this.checked) {
+            const checkboxes = ['diabetes', 'highBP', 'heartDisease', 'familyCancerHistory', 'pregnancyHistory'];
+            checkboxes.forEach(id => {
+                document.getElementById(id).checked = false;
+            });
+        }
+    });
+    
+    // If any other medical history checkbox is checked, uncheck "None of the above"
+    const medicalCheckboxes = ['diabetes', 'highBP', 'heartDisease', 'familyCancerHistory', 'pregnancyHistory'];
+    medicalCheckboxes.forEach(id => {
+        document.getElementById(id).addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('noMedicalHistory').checked = false;
+            }
+        });
+    });
+});
+</script>
 {% endblock %}
