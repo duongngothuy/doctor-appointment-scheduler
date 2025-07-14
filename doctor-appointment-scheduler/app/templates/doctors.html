@@ -1,27 +1,160 @@
 {% extends "base.html" %}
 
-{% block title %}Doctor Portal - Doctor Scheduler{% endblock %}
+{% block title %}Doctor Portal - Women's Health Center{% endblock %}
 
 {% block content %}
-<h1>Doctor Portal</h1>
-<p class="lead">Welcome to the doctor portal. Manage your schedule and patient appointments.</p>
-
-<div class="row">
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">
-                <h5>Available Features</h5>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-5 fw-bold mb-3">Doctor Portal</h1>
+                <p class="lead mb-4">Manage Your Schedule & Patient Appointments</p>
+                <p class="mb-4">Access your appointment schedule, review patient requests, and manage your availability all in one place.</p>
+                <a href="#appointments" class="btn btn-appointment btn-lg text-white">
+                    <i class="fas fa-calendar-check"></i> View Appointments
+                </a>
             </div>
-            <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">📅 View appointment schedule</li>
-                    <li class="list-group-item">✅ Approve/decline appointment requests</li>
-                    <li class="list-group-item">⏰ Set availability hours</li>
-                    <li class="list-group-item">👥 Manage patient information</li>
-                </ul>
+            <div class="col-lg-4">
+                <img src="{{ url_for('static', filename='images/healthcare-professional.jpg') }}" 
+                     alt="Doctor portal" class="img-fluid rounded-3 shadow-lg">
             </div>
         </div>
     </div>
-</div>
-{% endblock %}
+</section>
 
+<!-- Quick Stats -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-primary-custom fw-bold">12</h3>
+                    <p class="mb-0">Today's Appointments</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-warning fw-bold">5</h3>
+                    <p class="mb-0">Pending Requests</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-success fw-bold">8</h3>
+                    <p class="mb-0">This Week</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h3 class="text-info fw-bold">98%</h3>
+                    <p class="mb-0">Patient Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Dashboard -->
+<section class="py-5" id="appointments">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Recent Appointments -->
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Recent Appointments</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-center">
+                            <a href="{{ url_for('main.admin_appointments') }}" class="btn btn-primary">
+                                <i class="fas fa-eye me-2"></i>View All Appointments
+                            </a>
+                        </p>
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Access the full appointment management system to view, approve, and manage patient appointments.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Available Features -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Available Features</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded">
+                                    <h6><i class="fas fa-calendar-check text-success me-2"></i>View Appointment Schedule</h6>
+                                    <p class="small mb-0">See all your upcoming appointments and patient details.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded">
+                                    <h6><i class="fas fa-check-circle text-primary me-2"></i>Approve/Decline Requests</h6>
+                                    <p class="small mb-0">Review and manage incoming appointment requests.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded">
+                                    <h6><i class="fas fa-clock text-warning me-2"></i>Set Availability Hours</h6>
+                                    <p class="small mb-0">Update your schedule and available appointment times.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded">
+                                    <h6><i class="fas fa-users text-info me-2"></i>Manage Patient Information</h6>
+                                    <p class="small mb-0">Access patient records and appointment history.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 20px;">
+                    <!-- Quick Actions -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-success text-white">
+                            <h6 class="mb-0"><i class="fas fa-bolt me-2"></i>Quick Actions</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-grid gap-2">
+                                <a href="{{ url_for('main.admin_appointments') }}" class="btn btn-outline-primary">
+                                    <i class="fas fa-calendar-alt me-2"></i>View All Appointments
+                                </a>
+                                <button class="btn btn-outline-success" disabled>
+                                    <i class="fas fa-clock me-2"></i>Update Availability
+                                </button>
+                                <button class="btn btn-outline-info" disabled>
+                                    <i class="fas fa-user-plus me-2"></i>Add New Patient
+                                </button>
+                            </div>
+                            <small class="text-muted mt-2 d-block">Some features coming soon</small>
+                        </div>
+                    </div>
+
+                    <!-- Today's Schedule -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0">Today's Schedule</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="small">
+                                <p><strong>9:00 AM</strong> - Sarah Johnson (Annual Exam)</p>
+                                <p><strong>10:30 AM</strong> - Maria Garcia (Consultation)</p>
+                                <p><strong>2:00 PM</strong> - Lisa Chen (Follow-up)</p>
+                                <p class="mb-0"><strong>3:30 PM</strong> - Available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
