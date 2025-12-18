@@ -257,35 +257,6 @@ DATABASE_URL=sqlite:///app.db
 FLASK_ENV=production
 ```
 
-## Future Enhancements
-
-### Short-term Goals
-- [ ] Email confirmation for appointments
-- [ ] SMS notifications and reminders
-- [ ] Patient appointment history dashboard
-- [ ] Doctor availability calendar with drag-and-drop
-- [ ] User authentication and login system
-- [ ] Password reset functionality
-
-### Long-term Goals
-- [ ] Video consultation integration
-- [ ] Medical records upload and storage
-- [ ] Insurance verification API integration
-- [ ] Multi-language support
-- [ ] Mobile app (iOS/Android)
-- [ ] Payment processing for co-pays
-- [ ] Analytics dashboard for administrators
-- [ ] Integration with Electronic Health Records (EHR) systems
-
-### Technical Improvements
-- [ ] Add comprehensive unit and integration tests
-- [ ] Implement caching for improved performance
-- [ ] Add API rate limiting
-- [ ] Migrate to PostgreSQL for production
-- [ ] Implement Redis for session management
-- [ ] Add logging and monitoring (e.g., Sentry)
-- [ ] Implement CI/CD pipeline with automated testing
-
 ## Author
 
 **Duong Ngo**
