@@ -4,8 +4,6 @@ A comprehensive full-stack web application for scheduling and managing women's h
 
 **Live Demo:** [https://doctor-appointment-scheduler.onrender.com/](https://doctor-appointment-scheduler.onrender.com/)
 
-![Women's Health Center](https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
-
 ## Table of Contents
 
 - [Features](#features)
@@ -68,7 +66,7 @@ A comprehensive full-stack web application for scheduling and managing women's h
 - **Render.com** - Cloud application platform
 - **Gunicorn** - Production WSGI server
 
-## 📁 Project Structure
+## Project Structure
 ```
 doctor-appointment-scheduler/
 ├── app/
@@ -256,13 +254,3 @@ SECRET_KEY=your-secret-key-here
 DATABASE_URL=sqlite:///app.db
 FLASK_ENV=production
 ```
-
-## Author
-
-**Duong Ngo**
-
-- GitHub: [@duongngothuy](https://github.com/duongngothuy)
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile)
-- Portfolio: [Your Portfolio Website](https://your-portfolio.com)
-
----
