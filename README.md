@@ -4,17 +4,6 @@ A comprehensive full-stack web application for scheduling and managing women's h
 
 **Live Demo:** [https://doctor-appointment-scheduler.onrender.com/](https://doctor-appointment-scheduler.onrender.com/)
 
-## Table of Contents
-
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Database Schema](#database-schema)
-- [Deployment](#deployment)
-- [Future Enhancements](#future-enhancements)
-
 
 ## Features
 
@@ -65,38 +54,6 @@ A comprehensive full-stack web application for scheduling and managing women's h
 ### Deployment
 - **Render.com** - Cloud application platform
 - **Gunicorn** - Production WSGI server
-
-## Project Structure
-```
-doctor-appointment-scheduler/
-├── app/
-│   ├── __init__.py              # Application factory
-│   ├── models.py                # Database models
-│   ├── main/
-│   │   ├── __init__.py          # Blueprint initialization
-│   │   └── routes.py            # Application routes
-│   ├── templates/
-│   │   ├── base.html            # Base template with navigation
-│   │   ├── index.html           # Homepage
-│   │   ├── patients.html        # Patient appointment booking portal
-│   │   ├── doctors.html         # Doctor dashboard
-│   │   ├── admin/
-│   │   │   └── appointments.html # Admin appointment management
-│   │   └── services/
-│   │       ├── breast_cancer.html
-│   │       ├── hpv.html
-│   │       ├── pap_smear.html
-│   │       └── reproductive.html
-│   └── static/
-│       └── images/              # Static image assets
-├── migrations/                  # Database migration files
-├── config.py                    # Application configuration
-├── run.py                       # Application entry point
-├── requirements.txt             # Python dependencies
-├── Procfile                     # Deployment configuration
-├── .env.example                 # Environment variables template
-└── README.md                    # Project documentation
-```
 
 ## Installation
 
