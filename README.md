@@ -51,16 +51,6 @@ A comprehensive full-stack web application for scheduling and managing women's h
 - **python-dotenv** - Environment variable management
 - **Alembic** - Database migration tool
 
-### Deployment
-- **Render.com** - Cloud application platform
-- **Gunicorn** - Production WSGI server
-
-## Installation
-
-### Prerequisites
-- Python 3.12 or higher
-- pip (Python package manager)
-- Git
 
 ### Local Setup
 
